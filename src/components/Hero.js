@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import heroImg from '../assets/logo192.png';
+import { Link } from 'react-router-dom';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -38,14 +39,16 @@ export default function Hero() {
         >
           Shop the latest trends with amazing discounts.
         </motion.p>
-        <motion.a
-          href="/shop"
-          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition-transform transform hover:scale-105"
+        <motion.div
           variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
         >
-          Shop Now
-        </motion.a>
+          <Link
+            to="/shop"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition-transform transform hover:scale-105"
+          >
+            Shop Now
+          </Link>
+        </motion.div>
       </motion.div>
       <motion.div
         className="w-full md:w-1/2 flex justify-center"
